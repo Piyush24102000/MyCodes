@@ -1,0 +1,36 @@
+let k = 3
+let str = 'aabbcc'
+let i = 0 
+let j = 0
+let max = -Infinity
+let obj = new Map()
+
+while(j < str.length){
+  if(obj.has(str[j])){
+    obj.set(str[j],obj.get(str[j])+1)
+  }
+  else{
+    obj.set(str[j],1)
+  }
+  /////////////////////
+  if(obj.size < k){
+    j++
+  }
+  else if(obj.size == k){
+    max = Math.max(max,j-i+1)
+    j++
+  }
+  else if(obj.size > k){
+    while(obj.size > k){
+      obj.set(str[i],obj.get(str[i]) - 1)
+      //check if the value of key is 0 or not
+      if(obj.get(str[i]) == 0){
+        obj.delete(str[i])
+      }
+      i++
+    }
+    j++
+  }
+}
+console.log(max)
+

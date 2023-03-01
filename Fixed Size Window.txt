@@ -1,0 +1,48 @@
+WAP to find all the subarray whose length is 9
+//find subarray whose sum is 9
+let arr = [2,5,2,1,6,8,4]
+let i = 0
+let j = 0
+let sum = 0 
+let target = 9
+let temp = []
+while(j < arr.length){
+  if(sum + arr[j] <= target){
+    sum += arr[j]
+    j++
+   // console.log(sum,arr[j])
+  } 
+  else if( sum + arr[j] > target){
+    sum -= arr[i]
+    i++
+  }  
+
+  if(sum == target){
+  temp.push(arr.slice(i,j))
+  
+  }
+}
+console.log(temp)
+////////////////////////////////////
+
+////Subarray with size 4 and find the maximum size
+let arr = [1, 4, 2, 10, 23, 3, 1, 0, 20]
+let k = 4
+let i = 0
+let j = 0
+let sum = 0 //17
+let max = -Infinity
+while( j < arr.length){
+  if(j - i + 1 <= k){
+    sum += arr[j]
+    max = Math.max(sum,max)
+    j++
+  }
+  else{
+    sum += arr[j] - arr[i]
+    max = Math.max(sum,max)
+    j++
+    i++
+  }
+}
+console.log(max)
