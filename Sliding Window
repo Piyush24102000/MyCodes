@@ -1,4 +1,4 @@
-##WAP to find all the subarray whose length is 9
+WAP to find all the subarray whose length is 9
 //find subarray whose sum is 9
 let arr = [2,5,2,1,6,8,4]
 let i = 0
@@ -23,4 +23,4 @@ while(j < arr.length){
   }
 }
 console.log(temp)
-///////////////////
+////////////////////////////////////
